@@ -11,19 +11,22 @@ public class TraditionalThreadCommunication {
 
   public static void main(String[] args) {
 
-    // final变量说明[http://www.cnblogs.com/alexlo/p/4971229.html]
-    Business business = new Business();
+    /* Runnable内部类中引用了business变量，在jdk1.6下必须显示声明为final；jdk1.8下虽然不用显示声明为final，但是在内部类中不允许对business修改 */
+    final Business business = new Business();
 
-    /** 子线程 * */
+    /* 子线程 */
     new Thread(
-            () -> {
-              for (int i = 1; i <= 50; i++) {
-                business.sub(i);
+            new Runnable() {
+              @Override
+              public void run() {
+                for (int i = 1; i <= 50; i++) {
+                  business.sub(i);
+                }
               }
             })
         .start();
 
-    /** 主线程 * */
+    /* 主线程 */
     for (int i = 1; i <= 50; i++) {
       business.main(i);
     }
@@ -32,7 +35,7 @@ public class TraditionalThreadCommunication {
 
 class Business {
 
-  /** 标记 * */
+  /* 标记 */
   private boolean bShouldSub = true;
 
   public synchronized void sub(int i) {
