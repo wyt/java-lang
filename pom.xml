@@ -16,6 +16,7 @@
     </properties>
     <modules>
         <module>multi-thread</module>
+        <module>jvm</module>
     </modules>
     <build>
         <plugins>
