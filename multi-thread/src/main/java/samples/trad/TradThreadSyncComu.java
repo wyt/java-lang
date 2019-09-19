@@ -7,7 +7,7 @@ package samples.trad;
  *
  * <p>wait() notify()
  */
-public class TradThreadComu {
+public class TradThreadSyncComu {
 
   public static void main(String[] args) {
 
