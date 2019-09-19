@@ -17,6 +17,7 @@
     <modules>
         <module>multi-thread</module>
         <module>jvm</module>
+        <module>io</module>
     </modules>
     <build>
         <plugins>
