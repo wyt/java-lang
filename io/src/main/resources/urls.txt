@@ -1,0 +1,6 @@
+http://sso.portal.unicom.local/eip_sso/ssoLogin.html?appid=np000&success=http%3A%2F%2Fwww.portal.unicom.local%2Fuser%2Ftoken&error=http%3A%2F%2Fwww.portal.unicom.local%2Fuser%2Ferror&return=http%3A%2F%2Fwww.portal.unicom.local%2F
+http://www.eshop.unicom.local
+http://www.eshop.unicom.local:8888/mshop
+http://www.eshop.unicom.local:8780/wshop/ws
+http://202.99.45.118/pshop/login/index.jsf
+http://pic.eshop.unicom.local/test.jpg
