@@ -1,4 +1,4 @@
-package io.mysnippet.multithread;
+package samples.trad;
 
 /**
  * 传统线程同步通信技术
@@ -7,7 +7,7 @@ package io.mysnippet.multithread;
  *
  * <p>wait() notify()
  */
-public class TraditionalThreadCommunication {
+public class TradThreadComu {
 
   public static void main(String[] args) {
 

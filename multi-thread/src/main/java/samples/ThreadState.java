@@ -1,4 +1,4 @@
-package io.mysnippet.multithread;
+package samples;
 
 import java.util.Arrays;
 import java.util.Random;
