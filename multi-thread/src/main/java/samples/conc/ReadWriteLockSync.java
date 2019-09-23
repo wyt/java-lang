@@ -9,6 +9,8 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
+ * 读写锁 一个线程获取了rwl上的写锁，其他线程是不能同时获取rwl上的写锁和读锁的；一个线程获取了rwl上的读锁，其他线程可以再获得读锁，而不能获得写锁。
+ *
  * @author WANG YONG TAO
  * @date 2019/09/19
  */
@@ -26,9 +28,9 @@ class ReadWriteLockSync {
               Set<String> keys = dict.m.keySet();
               for (String key : keys) {
                 Data val = dict.get(key);
-                System.out.println(
-                    String.format(
-                        "%s read data: key=%s,val=%s", Thread.currentThread().getName(), key, val));
+//                System.out.println(
+//                    String.format(
+//                        "%s read data: key=%s,val=%s", Thread.currentThread().getName(), key, val));
               }
               TimeUnit.MILLISECONDS.sleep(599);
             } catch (InterruptedException e) {
@@ -45,9 +47,9 @@ class ReadWriteLockSync {
               String key = UUID.randomUUID().toString();
               Data val = new Data(key);
               dict.put(key, val);
-              System.out.println(
-                  String.format(
-                      "%s put data: key=%s,val=%s", Thread.currentThread().getName(), key, val));
+//              System.out.println(
+//                  String.format(
+//                      "%s put data: key=%s,val=%s", Thread.currentThread().getName(), key, val));
               TimeUnit.MILLISECONDS.sleep(699);
             } catch (InterruptedException e) {
               e.printStackTrace();
@@ -55,13 +57,15 @@ class ReadWriteLockSync {
           }
         };
 
-    // 开启三个读线程
-    for (int i = 0; i < 6; i++) {
+    /* 读线程 & 写线程可以都改成1个，方便观察读锁和写锁互斥 */
+
+    // 开启多个读线程
+    for (int i = 0; i < 1; i++) {
       new Thread(rnnr, "THD-R-" + i).start();
     }
 
-    // 开启两个写线程
-    for (int i = 0; i < 6; i++) {
+    // 开启多个写线程
+    for (int i = 0; i < 1; i++) {
       new Thread(runw, "THD-W-" + i).start();
     }
   }
@@ -80,8 +84,9 @@ class ReadWriteLockSync {
   public Data get(String key) {
     r.lock();
     try {
-      // 有可能乱序
-      // outputer.output("1 2 3 4 5 6 7 8 9");
+      // 多个读线程可能乱序
+      // 读写各一个线程保证顺序
+      outputer.output("1 2 3 4 5 6 7 8 9");
       return m.get(key);
     } finally {
       r.unlock();
@@ -91,8 +96,8 @@ class ReadWriteLockSync {
   public Data put(String key, Data value) {
     w.lock();
     try {
-      // 保证顺序
-      // outputer.output("9 8 7 6 5 4 3 2 1");
+      // 总保证顺序
+      outputer.output("9 8 7 6 5 4 3 2 1");
       return m.put(key, value);
     } finally {
       w.unlock();
