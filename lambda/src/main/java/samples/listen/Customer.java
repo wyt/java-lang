@@ -1,7 +1,5 @@
 package samples.listen;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * 客户
  *
@@ -10,10 +8,10 @@ import java.util.concurrent.TimeUnit;
  */
 public class Customer implements FinishedListener {
 
-  private CustomerService afterSaleService;
+  private CustomerService customerService;
 
-  public Customer(CustomerService afterSaleService) {
-    this.afterSaleService = afterSaleService;
+  public Customer(CustomerService customerService) {
+    this.customerService = customerService;
   }
 
   /**
@@ -23,13 +21,10 @@ public class Customer implements FinishedListener {
    */
   public void consult(final String question) {
 
-    new Thread(() -> afterSaleService.attendantHandle(this, question)).start();
+    customerService.setFinishedListener(this);
+    customerService.attendantHandle(question);
 
-    try {
-      TimeUnit.MILLISECONDS.sleep(999);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
+    // new Thread(() -> afterSaleService.attendantHandle(this, question)).start();
 
     busyOther();
   }
