@@ -3,7 +3,7 @@ package samples.listen;
 import java.util.concurrent.TimeUnit;
 
 /** 消费者 */
-public class Customer {
+public class Customer implements FinishedListener {
 
   private CustomerService afterSaleService;
 
@@ -18,14 +18,7 @@ public class Customer {
    */
   public void consult(final String question) {
 
-    new Thread(
-            () ->
-                afterSaleService.attendantHandle(
-                    (msg) ->
-                        System.out.println(
-                            String.format("[%s] 客服反馈：%s", Thread.currentThread().getName(), msg)),
-                    question))
-        .start();
+    new Thread(() -> afterSaleService.attendantHandle(this, question)).start();
 
     try {
       TimeUnit.MILLISECONDS.sleep(999);
@@ -39,5 +32,10 @@ public class Customer {
   /** 忙于其他事情去了 */
   public void busyOther() {
     System.out.println(String.format("[%s] 客户处理其他事情去了。", Thread.currentThread().getName()));
+  }
+
+  @Override
+  public void onFinished(String msg) {
+    System.out.println(String.format("[%s] 客服反馈：%s", Thread.currentThread().getName(), msg));
   }
 }
