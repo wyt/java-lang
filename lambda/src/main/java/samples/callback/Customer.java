@@ -2,17 +2,17 @@ package samples.callback;
 
 import java.util.concurrent.TimeUnit;
 
-/** 消费者 */
-public class Consumer implements CallBack {
+/** 客户 */
+public class Customer implements CallBack {
 
-  private AfterSaleService afterSaleService;
+  private CustomerService afterSaleService;
 
-  public Consumer(AfterSaleService afterSaleService) {
+  public Customer(CustomerService afterSaleService) {
     this.afterSaleService = afterSaleService;
   }
 
   /**
-   * 咨询售后服务
+   * 业务咨询
    *
    * @param question
    */
@@ -31,11 +31,11 @@ public class Consumer implements CallBack {
 
   /** 忙于其他事情去了 */
   public void busyOther() {
-    System.out.println(String.format("[%s] 消费者处理其他事情去了。", Thread.currentThread().getName()));
+    System.out.println(String.format("[%s] 客户处理其他事情去了。", Thread.currentThread().getName()));
   }
 
   @Override
   public void solve(String result) {
-    System.out.println(String.format("[%s] 售后反馈：%s", Thread.currentThread().getName(), result));
+    System.out.println(String.format("[%s] 客服反馈：%s", Thread.currentThread().getName(), result));
   }
 }

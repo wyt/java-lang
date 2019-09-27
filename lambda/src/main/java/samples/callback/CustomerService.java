@@ -2,8 +2,8 @@ package samples.callback;
 
 import java.util.concurrent.TimeUnit;
 
-/** 售后服务中心 */
-public class AfterSaleService {
+/** 客服中心 */
+public class CustomerService {
 
   /**
    * 坐席处理
@@ -13,13 +13,13 @@ public class AfterSaleService {
    * @throws InterruptedException
    */
   public void attendantHandle(CallBack callBack, String question) {
-    System.out.println(String.format("[%s] 消费者咨询: %s", Thread.currentThread().getName(), question));
+    System.out.println(String.format("[%s] 客户咨询: %s", Thread.currentThread().getName(), question));
     try {
       TimeUnit.MILLISECONDS.sleep(2999);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
-    String solution = "尊敬的客户您好，请您重启设备试下，感谢您的反馈！";
+    String solution = "您好！您本月国内通用流量共有7.51GB,截至19年9月27日9时38分，剩余1.50GB。【中国X动】";
     callBack.solve(solution);
   }
 }
