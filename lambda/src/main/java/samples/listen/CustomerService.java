@@ -2,7 +2,12 @@ package samples.listen;
 
 import java.util.concurrent.TimeUnit;
 
-/** 售后服务中心 */
+/**
+ * 客服中心
+ *
+ * @author WANG YONG TAO
+ * @date 2019/09/27
+ */
 public class CustomerService {
 
   /**

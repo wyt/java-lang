@@ -2,7 +2,12 @@ package samples.callback;
 
 import java.util.concurrent.TimeUnit;
 
-/** 客户 */
+/**
+ * 客户
+ *
+ * @author WANG YONG TAO
+ * @date 2019/09/27
+ */
 public class Customer implements CallBack {
 
   private CustomerService afterSaleService;
