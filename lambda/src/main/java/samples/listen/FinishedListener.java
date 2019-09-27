@@ -15,7 +15,7 @@ package samples.listen;
  * @date 2018/5/9
  */
 @FunctionalInterface
-public interface TaskFinishedListener {
+public interface FinishedListener {
 
-  void onTaskFinished(String msg);
+  void onFinished(String msg);
 }
