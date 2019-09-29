@@ -1,4 +1,4 @@
-###java-lang
+### java-lang
 
 #### module
 * `design-patterns` [设计模式](./design-patterns/README.md)

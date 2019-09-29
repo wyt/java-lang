@@ -1,4 +1,4 @@
-###多线程技术
+### 多线程技术
 
 * `samples.trad` 传统线程包 
   * `TradThread` 传统线程
