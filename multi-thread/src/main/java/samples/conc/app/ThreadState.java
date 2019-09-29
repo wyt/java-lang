@@ -1,4 +1,4 @@
-package samples;
+package samples.conc.app;
 
 import java.util.Arrays;
 import java.util.Random;
