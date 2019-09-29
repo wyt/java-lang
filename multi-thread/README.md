@@ -18,3 +18,4 @@
   * `ScheduledThreadPoolExecutorTT` 定时任务线程池ScheduledThreadPoolExecutor
 * `samples.conc.app` 应用示例
   * `CachedData` 缓存多线程示例,应用锁降级提高并发性
+  * `ThreadState` 线程状态测试
