@@ -18,7 +18,7 @@
         <module>multi-thread</module>
         <module>jvm</module>
         <module>io</module>
-        <module>lambda</module>
+        <module>design-patterns</module>
     </modules>
     <build>
         <plugins>
