@@ -19,6 +19,8 @@
         <module>jvm</module>
         <module>io</module>
         <module>design-patterns</module>
+        <module>generic</module>
+        <module>annotation</module>
     </modules>
     <build>
         <plugins>
