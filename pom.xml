@@ -21,6 +21,7 @@
         <module>design-patterns</module>
         <module>generic</module>
         <module>annotation</module>
+        <module>java8-new-features</module>
     </modules>
     <build>
         <plugins>
