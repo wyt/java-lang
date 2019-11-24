@@ -1,4 +1,4 @@
-package io.mysnippet.java8.methodref;
+package samples.methodref;
 
 import java.util.Arrays;
 import java.util.List;
