@@ -16,7 +16,12 @@ public class StreamTest01 {
   public static void main(String[] args) {
 
     //  为集合创建串行流
-    List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
+    List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl", "abc");
+
+    System.out.println("strings: " + strings);
+
+    // distinct 去重
+    System.out.println("strings2： " + strings.stream().distinct().collect(Collectors.toList()));
 
     List<String> filtered =
         strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
