@@ -22,6 +22,7 @@
         <module>generic</module>
         <module>annotation</module>
         <module>java8-new-features</module>
+        <module>java5-new-features</module>
     </modules>
     <build>
         <plugins>

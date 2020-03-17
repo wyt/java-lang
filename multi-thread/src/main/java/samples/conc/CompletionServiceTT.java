@@ -65,6 +65,10 @@ public class CompletionServiceTT {
         }
       }
     }
+
+
+    completionService.take().get();
+
     threadPool.shutdown();
   }
 }
