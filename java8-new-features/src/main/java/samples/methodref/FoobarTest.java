@@ -32,10 +32,10 @@ public class FoobarTest {
               }
             });
 
-    /** A2: lambda方式 */
+    /** A2: lambda方式, 简化成只保留方法的实现部分 */
     Foobar fb02 = Foobar.create(() -> new Foobar());
 
-    /** A3: 构造方法引用,语法Class::new */
+    /** A3: 构造方法引用,语法Class::new, 新语法简化对象生成 */
     Foobar fb03 = Foobar.create(Foobar::new);
 
     final List<Foobar> fbs = Arrays.asList(fb01, fb02, fb03);
