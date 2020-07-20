@@ -5,7 +5,7 @@ import net.bytebuddy.asm.Advice;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
-class LoggerAdvisor {
+public class LoggerAdvisor {
 
   @Advice.OnMethodEnter
   public static void onMethodEnter(
