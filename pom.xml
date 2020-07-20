@@ -23,6 +23,7 @@
         <module>annotation</module>
         <module>java8-new-features</module>
         <module>java5-new-features</module>
+        <module>byte-buddy</module>
     </modules>
     <build>
         <plugins>
