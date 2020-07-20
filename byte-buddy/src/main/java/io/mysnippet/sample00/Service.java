@@ -12,6 +12,7 @@ public class Service {
   @Duration
   public int bar(int value) {
     try {
+      float r = 10 / 0;
       TimeUnit.MILLISECONDS.sleep(200);
     } catch (InterruptedException e) {
       e.printStackTrace();
