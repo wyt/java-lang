@@ -1,7 +1,5 @@
 package io.mysnippet.sample01;
 
-import io.mysnippet.sample01.Log;
-
 public class Service {
 
   @Log
