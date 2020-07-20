@@ -17,11 +17,12 @@ public class LoggerAdvisor {
     }
   }
 
-  @Advice.OnMethodExit
+  @Advice.OnMethodExit(onThrowable = Throwable.class)
   public static void onMethodExit(
       @Advice.Origin Method method,
       @Advice.AllArguments Object[] arguments,
-      @Advice.Return Object ret) {
+      @Advice.Return Object ret,
+      @Advice.Thrown Throwable t) {
 
     if (method.getAnnotation(Log.class) != null) {
       System.out.println(
@@ -30,7 +31,9 @@ public class LoggerAdvisor {
               + " with arguments: "
               + Arrays.toString(arguments)
               + " return: "
-              + ret);
+              + ret
+              + " throws: "
+              + t);
     }
   }
 }

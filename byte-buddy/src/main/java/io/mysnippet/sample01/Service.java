@@ -4,7 +4,7 @@ public class Service {
 
   @Log
   public int foo(int value) {
-    System.out.println("foo: " + value);
+    System.out.println("foo: " + value / 0);
     return value;
   }
 
