@@ -25,6 +25,7 @@
         <module>java5-new-features</module>
         <module>byte-buddy</module>
         <module>classloader</module>
+        <module>SPI</module>
     </modules>
     <build>
         <plugins>
