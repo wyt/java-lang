@@ -24,6 +24,7 @@
         <module>java8-new-features</module>
         <module>java5-new-features</module>
         <module>byte-buddy</module>
+        <module>classloader</module>
     </modules>
     <build>
         <plugins>
